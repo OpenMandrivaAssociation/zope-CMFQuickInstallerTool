@@ -1,24 +1,25 @@
-%define product        CMFQuickInstallerTool
-%define version        1.5.9
-%define release        1
+%define Product CMFQuickInstallerTool
+%define product cmfquickinstallertool
+%define name    zope-%{Product}
+%define version 2.0.3
+%define release %mkrel 1
 
-%define zope_minver    2.7
-
+%define zope_minver     2.7
 %define zope_home       %{_prefix}/lib/zope
 %define software_home   %{zope_home}/lib/python
 
-Summary:        A facility for activation/deactivation of CMF products inside a CMF site
-Name:           zope-%{product}
-Version:        %{version}
-Release:        %mkrel %{release}
-License:        GPL
-Group:          System/Servers
-Source:         http://plone.org/products/cmfquickinstallertool/releases/%{version}/CMFQuickInstallerTool-%{version}.tar.bz2
-URL:            http://sourceforge.net/projects/collective
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
-BuildArch:      noarch
-Requires:       zope >= %{zope_minver}
-Requires:       zope-CMF
+Name:		%{name}
+Version:	%{version}
+Release:	%{release}
+Summary:    A facility for activation/deactivation of CMF products inside a CMF site
+License:    GPL
+Group:      System/Servers
+URL:        http://plone.org/products/%{product}
+Source:     http://plone.org/products/%{product}/releases/%{version}/%{Product}-%{version}.tar.gz
+Requires:   zope >= %{zope_minver}
+Requires:   zope-CMF
+BuildArch:  noarch
+BuildRoot:  %{_tmppath}/%{name}-%{version}
 
 %description
 CMFQuickInstallerTool is a facility for comfortable
@@ -85,7 +86,5 @@ if [ -f "%{_prefix}/bin/zopectl" ] && [ "`%{_prefix}/bin/zopectl status`" != "da
 fi
 
 %files
-%defattr(0644, root, root, 0755)
+%defattr(-,root,root)
 %{software_home}/Products/*
-
-

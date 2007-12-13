@@ -1,7 +1,7 @@
 %define Product CMFQuickInstallerTool
 %define product cmfquickinstallertool
 %define name    zope-%{Product}
-%define version 2.0.3
+%define version 2.0.4
 %define release %mkrel 1
 
 %define zope_minver     2.7

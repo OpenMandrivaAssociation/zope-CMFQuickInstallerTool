@@ -2,7 +2,7 @@
 %define product cmfquickinstallertool
 %define name    zope-%{Product}
 %define version 2.0.4
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define zope_minver     2.7
 %define zope_home       %{_prefix}/lib/zope
@@ -26,38 +26,8 @@ CMFQuickInstallerTool is a facility for comfortable
 activation/deactivation of CMF compliant products inside a CMF
 site.
 
-Therefore it has to be installed as a tool inside a CMF portal,
-where it stores the information about the installed products.
-
-The requirements for a product to be installable with
-QuickInstallerTool are quite simple (almost all existing CMF
-products fulfill them):
-
-  External Product:  The product has to implement an external
-                     method 'install' in a python module 'Install.py'
-                     in its Extensions directory.
-
-  TTW Product: The product has to have a 'Install' folder
-               and have a python script titled 'install' inside
-               that folder.
-
-Products can be uninstalled and QuickInstellerTool removes
-the following items a product creates during install:
-
-portal types,
-portal skins,
-portal actions,
-portalobjects (objects created in the root of the portal),
-workflows,
-left and right slots (also checks them only for the portal)
-
-Attention: QuickInstallerTool just tracks which objects are
-ADDED, but not what is changed or deleted.
-
-second Attention:
-QuickInstallerTool just can uninstall products that are
-installed via QuickInstallerTool
-
+QuickInstallerTool only tracks which objects are added,
+but not what is changed or deleted.
 
 %prep
 %setup -c -q

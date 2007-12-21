@@ -19,6 +19,7 @@ Source:     http://plone.org/products/%{product}/releases/%{version}/%{Product}-
 Requires:   zope >= %{zope_minver}
 Requires:   zope-CMF
 BuildArch:  noarch
+BuildRoot:  %{_tmppath}/%{name}-%{version}
 
 %description
 CMFQuickInstallerTool is a facility for comfortable

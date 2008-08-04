@@ -2,7 +2,7 @@
 %define product cmfquickinstallertool
 %define name    zope-%{Product}
 %define version 2.0.4
-%define release %mkrel 2
+%define release %mkrel 4
 
 %define zope_minver     2.7
 %define zope_home       %{_prefix}/lib/zope
